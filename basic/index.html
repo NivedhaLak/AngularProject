@@ -1,0 +1,22 @@
+ <html>
+ <head><title>
+ Angular Learning
+ </title></head>
+ <script src="js/angular.min.js"></script>
+ <script src="js/app.js"></script>
+ <body ng-app="index.app" ng-controller="index.controller">
+ <h2>LOGIN APPLICATION </h2>
+ <form name="myForm">
+ Enter your name : <input type="text" ng-model="name" name="name" required>
+ Enter your password : <input type="password" ng-model="password" name="password" required>
+</form>
+ <button ng-model="clear" ng-click="clear()" value="Clear">Clear</button>
+ <button ng-model="submit" ng-disabled="!myForm.name.$valid || !myForm.password.$valid" ng-click="myForm.name.$valid && myForm.password.$valid && submit()" value="submit">Submit</button>
+<br/><br/>
+
+-------------------------------------------------------------------
+<br/>
+{{myForm.name.$valid}}
+<div ng-if="myForm.name.$valid || myForm.password.$valid"> hello {{name}} {{password}}</div>
+ </body>
+ </html>
